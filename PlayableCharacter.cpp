@@ -93,8 +93,7 @@ Vector2f PlayableCharacter::getCentre()
 {
 	return Vector2f(
 		m_position.x + m_Sprite.getGlobalBounds().width / 2,
-		m_position.y + m_Sprite.getGlobalBounds().height / 2,
-		);
+		m_position.y + m_Sprite.getGlobalBounds().height / 2);
 }
 
 FloatRect PlayableCharacter::getFeet()
