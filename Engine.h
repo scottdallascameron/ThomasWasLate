@@ -79,6 +79,10 @@ private:
 	//load new level
 	void loadLevel();
 
+	//detect collisions
+	//POLYMOPRPHISM
+	bool detectCollisions(PlayableCharacter& character);
+
 public:
 	//constructor
 	Engine();
