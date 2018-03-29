@@ -24,7 +24,8 @@ void Engine::update(float dtAsSeconds)
 			//new level required
 			m_NewLevelRequired = true;
 
-			//TODO: Play sound for reaching goal
+			//Play sound for reaching goal
+			m_SM.playReachGoal();
 		}
 		else
 		{
@@ -53,6 +54,29 @@ void Engine::update(float dtAsSeconds)
 
 
 		}//end of if playing
+
+		//check if fire sound needs to be played
+		//iterate through the vector of vector2f objects
+		for (auto it = m_FireEmitters.begin(); it != m_FireEmitters.end(); it++)
+		{
+
+			//where is this emitter
+			//store the location in pos
+			float posX = (*it).x;
+			float posY = (*it).y;
+
+			//is the emitter near the player
+			//make a 500 pixel rectangle around the emitter
+			FloatRect localRect(posX - 250, posY - 250, 500, 500);
+
+			//is the playe rinside the local rect
+			if (m_Thomas.getPosition().intersects(localRect))
+			{
+				//play the osund and pass in the locations
+				m_SM.playFire(Vector2f(posX, posY), m_Thomas.getCentre());
+			}
+
+		}//end fire loop
 
 		//set the view around the appropriate characters
 		if (m_SplitScreen)

@@ -60,11 +60,13 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 						//PLAS SOUND OF DEATH
 						if (m_Arraylevel[y][x] == 2) //fire
 						{
-							//TODO: Play sound
+							//Play sound
+							m_SM.playFallInFire();
 						}
 						else //water
 						{
-							//TODO: Play sound
+							//Play sound
+							m_SM.playFallInWater();
 						}
 					}//end block collisions
 				}//end water/lava test

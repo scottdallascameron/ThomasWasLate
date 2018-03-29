@@ -37,13 +37,13 @@ void Engine::input()
 	//handle input specific to thomas
 	if (m_Thomas.handleInput())
 	{
-		//TODO:: play jump sound
+		m_SM.playJump();
 	}
 
 	//handle input specific to Bob
 	if (m_Bob.handleInput())
 	{
-		//TODO:: play jump sound
+		m_SM.playJump();
 	}
 
 }	//end input

@@ -4,6 +4,7 @@
 #include "Thomas.h"
 #include "Bob.h"
 #include "LevelManager.h"
+#include "SoundManager.h"
 
 using namespace sf;
 //	SARAH NOTE: Don't use 'using' int h. files! bad.
@@ -21,6 +22,9 @@ private:
 
 	//A class to manage the levels
 	LevelManager m_LM;
+
+	//Sound Manager
+	SoundManager m_SM;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -82,6 +86,12 @@ private:
 	//detect collisions
 	//POLYMOPRPHISM
 	bool detectCollisions(PlayableCharacter& character);
+
+	//make a vector of the best places to emit sounds from
+	void populateEmitters(vector<Vector2f>& vSoundEmitters, int** arrayLevel);
+
+	//a list vector of vector2f to contain the fire emitter locations
+	vector <Vector2f> m_FireEmitters;
 
 public:
 	//constructor

@@ -124,7 +124,7 @@ void SoundManager::playFallInWater()
 void SoundManager::playJump()
 {
 	m_JumpSound.setRelativeToListener(true);
-	m_FallInFireSound.play();
+	m_JumpSound.play();
 }
 
 void SoundManager::playReachGoal()
